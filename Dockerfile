@@ -10,5 +10,4 @@ RUN ldconfig
 # install protobuf-c
 # https://github.com/protobuf-c/protobuf-c
 RUN cd ~ && git clone https://github.com/protobuf-c/protobuf-c.git
-RUN export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig
-RUN cd ~/protobuf-c && ./autogen.sh && ./configure && make && make install
+RUN export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig && cd ~/protobuf-c && ./autogen.sh && ./configure && make && make install
