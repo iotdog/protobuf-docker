@@ -37,3 +37,9 @@ protoc --js_out=import_style=commonjs,binary:. device.proto
 ```
 protoc --c_out=. device.proto
 ```
+
+* compile proto for embeded c
+
+```
+protoc --plugin=protoc-gen-nanopb=/root/nanopb-0.3.9-linux-x86/generator/protoc-gen-nanopb --nanopb_out=. test.proto
+```
