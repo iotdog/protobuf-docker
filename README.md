@@ -29,13 +29,13 @@ cd /root/protos
 * compile proto for JS
 
 ```
-protoc --js_out=import_style=commonjs,binary:. device.proto
+protoc --js_out=import_style=commonjs,binary:. test.proto
 ```
 
 * compile proto for c
 
 ```
-protoc --c_out=. device.proto
+protoc --c_out=. test.proto
 ```
 
 * compile proto for embeded c
