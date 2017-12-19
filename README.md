@@ -2,13 +2,13 @@
 
 * get docker image
 
-1. build it locally
+build it locally
 
 ```
 docker build -t protobuf-docker:1.0 .
 ```
 
-2. pull from docker hub
+or pull from docker hub
 
 ```
 docker pull iotdog/protobuf-docker
