@@ -1,6 +1,6 @@
 # Usage
 
-* get docker image
+## 1. get docker image
 
 build it locally
 
@@ -14,31 +14,37 @@ or pull from docker hub
 docker pull iotdog/protobuf-docker
 ```
 
-* run docker and enter bash
+## 2. run docker and enter bash
 
 ```
 docker run -v /path/to/proto/folder:/root/protos -i -t --rm iotdog/protobuf-docker /bin/sh
 ```
 
-* change to proto folder
+if you are using windows to mount directories, please see this [tutorial](https://rominirani.com/docker-on-windows-mounting-host-directories-d96f3f056a2c).
+
+## 3. change to proto folder
 
 ```
 cd /root/protos
 ```
 
-* compile proto for JS
+## 4. compile proto for different languages
+
+### 4.1 compile proto for JS
 
 ```
 protoc --js_out=import_style=commonjs,binary:. test.proto
 ```
 
-* compile proto for c
+### 4.2 compile proto for c
 
 ```
 protoc --c_out=. test.proto
 ```
 
-* compile proto for embeded c
+### 4.3 compile proto for embeded c
+
+this is base on [nanopb](https://github.com/nanopb/nanopb).
 
 ```
 protoc --plugin=protoc-gen-nanopb=/root/nanopb-0.3.9-linux-x86/generator/protoc-gen-nanopb --nanopb_out=. test.proto
