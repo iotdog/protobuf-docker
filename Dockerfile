@@ -18,3 +18,13 @@ RUN cd ~/protobuf/python && python setup.py build && python setup.py install
 
 # install nanopb
 RUN cd ~ && wget https://jpa.kapsi.fi/nanopb/download/nanopb-0.3.9-linux-x86.tar.gz && tar -xzvf nanopb-0.3.9-linux-x86.tar.gz
+
+# install protobuf-go
+RUN cd ~ && wget https://redirector.gvt1.com/edgedl/go/go1.9.2.linux-amd64.tar.gz && tar -xzvf go1.9.2.linux-amd64.tar.gz
+RUN echo 'PATH=$PATH:$HOME/go/bin:$HOME/gopath/bin' > ~/.bashrc \
+    && echo 'export PATH' >> ~/.bashrc \
+    && echo 'GOROOT=$HOME/go' >> ~/.bashrc \
+    && echo 'export GOROOT' >> ~/.bashrc \
+    && echo 'GOPATH=$HOME/gopath' >> ~/.bashrc \
+    && echo 'export GOPATH' >> ~/.bashrc
+RUN cd ~ && mkdir gopath && source ~/.bashrc && go get -u github.com/golang/protobuf/protoc-gen-go
